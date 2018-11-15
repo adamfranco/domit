@@ -454,7 +454,7 @@ class DOMIT_ChildNodes_Interface extends DOMIT_Node {
 			
 			if (!method_exists($child, 'setOwnerDocument')) {
 				printpre(array_keys(get_object_vars($child)));
-				throwError(new Error("invalid Child Node"));
+				throwError(new HarmoniError("invalid Child Node"));
 			} 
 			
 			$child->setOwnerDocument($this);
