@@ -152,7 +152,7 @@ class php_http_client_generic extends php_http_request {
 	* @param int The port to establish the client connection on
 	* @param int The timeout value for the client connection
 	*/
-	function php_http_client_generic($host = '', $path = '/', $port = 80, $timeout = 0) {
+	function __construct($host = '', $path = '/', $port = 80, $timeout = 0) {
 		$this->connection = new php_http_connection($host, $path, $port, $timeout);
 		$this->headers = new php_http_headers();
 		$this->requestPath = $path;
@@ -500,7 +500,7 @@ class php_http_connection {
 	* @param int The port to establish the client connection on
 	* @param int The timeout value for the client connection
 	*/
-	function php_http_connection($host = '', $path = '/', $port = 80, $timeout = 0) {
+	function __construct($host = '', $path = '/', $port = 80, $timeout = 0) {
 		$this->host = $this->formatHost($host);
 		$this->path = $this->formatPath($path);
 		$this->port = $port;
@@ -585,7 +585,7 @@ class php_http_headers {
 	/**
 	* HTTP Headers constructor
 	*/
-	function php_http_headers() {
+	function __construct() {
 		$this->headers = array();
 	} //php_http_headers
 	

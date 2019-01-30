@@ -31,8 +31,8 @@ class php_http_proxy extends php_http_client_generic {
 	* @param int The port to establish the client connection on
 	* @param int The timeout value for the client connection
 	*/
-	function php_http_proxy($host, $path = '/', $port = 80, $timeout = 0) {
-		$this->php_http_client_generic($host, $path, $port, $timeout);		
+	function __construct($host, $path = '/', $port = 80, $timeout = 0) {
+		parent::__construct($host, $path, $port, $timeout);		
 		$this->setHeaders();		
 	} //php_http_proxy
 	

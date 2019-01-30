@@ -69,7 +69,7 @@ class DOMIT_XPath {
 	/**
 	* Constructor - creates an empty DOMIT_NodeList to store matching nodes
 	*/
-	function DOMIT_XPath() {
+	function __construct() {
 		require_once(DOMIT_INCLUDE_PATH . 'xml_domit_nodemaps.php');
 		$this->nodeList = new DOMIT_NodeList();
 	} //DOMIT_XPath

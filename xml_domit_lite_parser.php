@@ -65,9 +65,9 @@ class DOMIT_Lite_Node {
 	/**
 	* Raises error if abstract class is directly instantiated
 	*/
-	function DOMIT_Lite_Node() {		
-		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR, 
-			 'Cannot instantiate abstract class DOMIT_Lite_Node'); 
+	function __construct() {
+		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR,
+			 'Cannot instantiate abstract class DOMIT_Lite_Node');
 	} //DOMIT_Lite_Node
 	
 	/**
@@ -306,9 +306,9 @@ class DOMIT_Lite_ChildNodes_Interface extends DOMIT_Lite_Node {
 	/**
 	* Raises error if abstract class is directly instantiated
 	*/
-	function DOMIT_Lite_ChildNodes_Interface() {		
-		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR, 
-			 'Cannot instantiate abstract class DOMIT_Lite_ChildNodes_Interface'); 
+	function __construct() {
+		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR,
+			 'Cannot instantiate abstract class DOMIT_Lite_ChildNodes_Interface');
 	} //DOMIT_Lite_ChildNodes_Interface
 	
 	/**
@@ -649,7 +649,7 @@ class DOMIT_Lite_Document extends DOMIT_Lite_ChildNodes_Interface {
 	/**
 	* DOM Document constructor
 	*/
-	function DOMIT_Lite_Document() {
+	function __construct() {
 		$this->_constructor();
 		$this->xmlDeclaration = '';
 		$this->doctype = '';
@@ -1292,8 +1292,8 @@ class DOMIT_Lite_Element extends DOMIT_Lite_ChildNodes_Interface {
 	* DOM Element constructor
 	* @param string The tag name of the element
 	*/
-	function DOMIT_Lite_Element($tagName) {
-		$this->_constructor();		
+	function __construct($tagName) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_ELEMENT_NODE;
 		$this->nodeName = $tagName;
 		$this->attributes = array();
@@ -1568,8 +1568,8 @@ class DOMIT_Lite_TextNode extends DOMIT_Lite_Node {
 	* DOM Text Node constructor
 	* @param string The text of the node
 	*/
-	function DOMIT_Lite_TextNode($data) {
-		$this->_constructor();	
+	function __construct($data) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_TEXT_NODE;
 		$this->nodeName = '#text';
 		$this->setText($data);
@@ -1642,8 +1642,8 @@ class DOMIT_Lite_CDATASection extends DOMIT_Lite_TextNode {
 	* DOM CDATA Section node constructor
 	* @param string The text of the node
 	*/
-	function DOMIT_Lite_CDATASection($data) {
-		$this->_constructor();		
+	function __construct($data) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_CDATA_SECTION_NODE;
 		$this->nodeName = '#cdata-section';
 		$this->setText($data);

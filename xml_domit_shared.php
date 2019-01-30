@@ -110,7 +110,7 @@ class UIDGenerator {
 	/**
 	* UIDGenerator constructor
 	*/
-	function UIDGenerator() {
+	function __construct() {
 		$this->seed = 'node' . time();
 	} //UIDGenerator
 	

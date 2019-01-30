@@ -26,8 +26,8 @@ class DOMIT_Utilities {
 	/**
 	* Raises an error if an attempt to instantiate the class is made
 	*/
-	private function DOMIT_Utilities() {		
-	    die("DOMIT_Utilities Error: this is a static class that should never be instantiated.\n" . 
+	private function __construct() {		
+	    die("DOMIT_Utilities Error: this is a static class that should never be instantiated.\n" .
 		    "Please use the following syntax to access methods of this class:\n" .
 		    'DOMIT_Utilities::methodName(parameters)');
 	} //DOMIT_Utilities	

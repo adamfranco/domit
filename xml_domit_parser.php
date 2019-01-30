@@ -77,9 +77,9 @@ class DOMIT_Node {
 	/**
 	* Raises error if abstract class is directly instantiated
 	*/
-	function DOMIT_Node() {		
-		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR, 
-			 'Cannot instantiate abstract class DOMIT_Node'); 
+	function __construct() {
+		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR,
+			 'Cannot instantiate abstract class DOMIT_Node');
 	} //DOMIT_Node
 	
 	/**
@@ -399,9 +399,9 @@ class DOMIT_ChildNodes_Interface extends DOMIT_Node {
 	/**
 	* Raises error if abstract class is directly instantiated
 	*/
-	function DOMIT_ChildNodes_Interface() {		
-		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR, 
-			 'Cannot instantiate abstract class DOMIT_ChildNodes_Interface'); 
+	function __construct() {
+		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR,
+			 'Cannot instantiate abstract class DOMIT_ChildNodes_Interface');
 	} //DOMIT_ChildNodes_Interface
 	
 	/**
@@ -840,7 +840,7 @@ class DOMIT_Document extends DOMIT_ChildNodes_Interface {
 	/**
 	* DOM Document constructor
 	*/
-	function DOMIT_Document() {
+	function __construct() {
 		$this->_constructor();
 		$this->xmlDeclaration = null;
 		$this->doctype = null;
@@ -1849,8 +1849,8 @@ class DOMIT_Element extends DOMIT_ChildNodes_Interface {
 	* DOM Element constructor
 	* @param string The tag name of the element
 	*/
-	function DOMIT_Element($tagName) {
-		$this->_constructor();		
+	function __construct($tagName) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_ELEMENT_NODE;
 		$this->nodeName = $tagName;
 		$this->attributes = new DOMIT_NamedNodeMap_Attr();
@@ -2497,9 +2497,9 @@ class DOMIT_CharacterData extends DOMIT_Node {
 	* Prevents direct instantiation of DOMIT_CharacterData class
 	* @abstract
 	*/
-	function DOMIT_CharacterData() {		
-		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR, 
-			 'Cannot instantiate abstract class DOMIT_CharacterData'); 
+	function __construct() {
+		DOMIT_DOMException::raiseException(DOMIT_ABSTRACT_CLASS_INSTANTIATION_ERR,
+			 'Cannot instantiate abstract class DOMIT_CharacterData');
 	} //DOMIT_CharacterData
 	
 	/**
@@ -2639,8 +2639,8 @@ class DOMIT_TextNode extends DOMIT_CharacterData {
 	* DOM Text Node constructor
 	* @param string The text of the node
 	*/
-	function DOMIT_TextNode($data) {
-		$this->_constructor();	
+	function __construct($data) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_TEXT_NODE;
 		$this->nodeName = '#text';
 		$this->setText($data);
@@ -2750,8 +2750,8 @@ class DOMIT_CDATASection extends DOMIT_TextNode {
 	* DOM CDATA Section node constructor
 	* @param string The text of the node
 	*/
-	function DOMIT_CDATASection($data) {
-		$this->_constructor();		
+	function __construct($data) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_CDATA_SECTION_NODE;
 		$this->nodeName = '#cdata-section';
 		$this->setText($data);
@@ -2792,8 +2792,8 @@ class DOMIT_Attr extends DOMIT_Node {
 	* DOM Attr node constructor
 	* @param string The name of the attribute
 	*/
-	function DOMIT_Attr($name) {
-		$this->_constructor();	
+	function __construct($name) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_ATTRIBUTE_NODE;
 		$this->nodeName =$name;
 	} //DOMIT_Attr	
@@ -2896,8 +2896,8 @@ class DOMIT_DocumentFragment extends DOMIT_ChildNodes_Interface {
 	/**
 	* DOM Document Fragment node constructor
 	*/
-	function DOMIT_DocumentFragment() {
-		$this->_constructor();	
+	function __construct() {
+		$this->_constructor();
 		$this->nodeType = DOMIT_DOCUMENT_FRAGMENT_NODE;
 		$this->nodeName ='#document-fragment';
 		$this->nodeValue = null;
@@ -2976,8 +2976,8 @@ class DOMIT_Comment extends DOMIT_CharacterData {
 	* DOM Comment node constructor
 	* @param string The 
 	*/
-	function DOMIT_Comment($nodeValue) {
-		$this->_constructor();	
+	function __construct($nodeValue) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_COMMENT_NODE;
 		$this->nodeName = '#comment';
 		$this->nodeValue = $nodeValue;
@@ -3045,8 +3045,8 @@ class DOMIT_ProcessingInstruction extends DOMIT_Node {
 	* DOM Processing Instruction node constructor
 	* @param string The 
 	*/
-	function DOMIT_ProcessingInstruction($target, $data) {
-		$this->_constructor();	
+	function __construct($target, $data) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_PROCESSING_INSTRUCTION_NODE;
 		$this->nodeName = $target;
 		$this->nodeValue = $data;
@@ -3139,8 +3139,8 @@ class DOMIT_DocumentType extends DOMIT_Node {
 	* DOM Document Type node constructor
 	* @param string The 
 	*/
-	function DOMIT_DocumentType($name, $text) {
-		$this->_constructor();	
+	function __construct($name, $text) {
+		$this->_constructor();
 		$this->nodeType = DOMIT_DOCUMENT_TYPE_NODE;
 		$this->nodeName = $name;
 		$this->name = $name;
@@ -3212,9 +3212,9 @@ class DOMIT_Notation extends DOMIT_Node {
 	/**
 	* DOM Notation node constructor (NOT YET IMPLEMENTED!)
 	*/
-	function DOMIT_Notation() {		
-		DOMIT_DOMException::raiseException(DOMIT_NOT_SUPPORTED_ERR, 
-			 'Cannot instantiate DOMIT_Notation class. Notation nodes not yet supported.'); 
+	function __construct() {
+		DOMIT_DOMException::raiseException(DOMIT_NOT_SUPPORTED_ERR,
+			 'Cannot instantiate DOMIT_Notation class. Notation nodes not yet supported.');
 	} //DOMIT_Notation
 } //DOMIT_Notation
 

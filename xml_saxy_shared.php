@@ -57,8 +57,8 @@ class SAXY_Parser_Base {
 		
 	/**
 	* Constructor for SAX parser
-	*/					
-	function SAXY_Parser_Base() {
+	*/
+	function __construct() {
 		$this->charContainer = '';
 	} //SAXY_Parser_Base
 	

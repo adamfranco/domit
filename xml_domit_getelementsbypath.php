@@ -43,7 +43,7 @@ class DOMIT_GetElementsByPath {
 	/**
 	* Constructor - creates an empty DOMIT_NodeList to store matching nodes
 	*/
-	function DOMIT_GetElementsByPath() {
+	function __construct() {
 		require_once(DOMIT_INCLUDE_PATH . 'xml_domit_nodemaps.php');
 		$this->nodeList = new DOMIT_NodeList();
 	} //DOMIT_GetElementsByPath
@@ -220,7 +220,7 @@ class DOMIT_GetElementsByAttributePath {
     /**
 	* Constructor - creates an empty DOMIT_NodeList to store matching nodes
 	*/
-	function DOMIT_GetElementsByAttributePath() {
+	function __construct() {
 		require_once(DOMIT_INCLUDE_PATH . 'xml_domit_nodemaps.php');
 		$this->nodeList = new DOMIT_NodeList();
 	} //DOMIT_GetElementsByAttributePath

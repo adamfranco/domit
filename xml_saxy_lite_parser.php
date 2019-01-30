@@ -36,8 +36,8 @@ class SAXY_Lite_Parser extends SAXY_Parser_Base {
 	/**
 	* Constructor for SAX parser
 	*/
-	function SAXY_Lite_Parser() {
-		$this->SAXY_Parser_Base();
+	function __construct() {
+		parent::__construct();
 		$this->state = SAXY_STATE_NONE;
 	} //SAXY_Lite_Parser
 

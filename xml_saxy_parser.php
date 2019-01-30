@@ -120,8 +120,8 @@ class SAXY_Parser extends SAXY_Parser_Base {
 	/**
 	* Constructor for SAX parser
 	*/
-	function SAXY_Parser() {
-		$this->SAXY_Parser_Base();
+	function __construct() {
+		parent::__construct();
 		$this->state = SAXY_STATE_PROLOG_NONE;
 	} //SAXY_Parser
 	
