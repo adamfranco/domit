@@ -3576,7 +3576,7 @@ class DOMIT_Parser {
 					if ($data == ']') {
 						$this->parseItem = 'doctype';
 					}	
-					else if ($data{(strlen($data) - 1)} == '>') {
+					else if ($data[(strlen($data) - 1)] == '>') {
 						$this->parseContainer .= "\n   ";
 					}
 					break;
