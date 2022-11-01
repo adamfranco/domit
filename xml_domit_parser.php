@@ -3326,7 +3326,7 @@ class DOMIT_Parser {
 	* @param boolean True if CDATA Section nodes are not to be converted into Text nodes
 	* @return boolean True if the parsing is successful
 	*/
-	function parseSAXY(&$myXMLDoc, $xmlText, $preserveCDATA = true, $definedEntities) {
+	function parseSAXY(&$myXMLDoc, $xmlText, $preserveCDATA, $definedEntities) {
 		require_once(DOMIT_INCLUDE_PATH . 'xml_saxy_parser.php');
 		
 		$this->xmlDoc =& $myXMLDoc;
