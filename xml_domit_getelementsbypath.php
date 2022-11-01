@@ -110,14 +110,14 @@ class DOMIT_GetElementsByPath {
 	* @param string The pattern
 	*/
 	function determineSearchType($pattern) {
-		$firstChar = $pattern{0};
+		$firstChar = $pattern[0];
 		
 		if ($firstChar != GET_ELEMENTS_BY_PATH_SEPARATOR) {
 			//relative path
 			$this->searchType = GET_ELEMENTS_BY_PATH_SEARCH_RELATIVE;
 		}
 		else {
-			$secondChar = $pattern{1};
+			$secondChar = $pattern[1];
 				
 			if ($secondChar != GET_ELEMENTS_BY_PATH_SEPARATOR) {
 				//absolute path

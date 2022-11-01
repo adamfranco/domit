@@ -157,7 +157,7 @@ class DOMIT_XPath {
 		$this->localNodeContainer = array();
 
 		for ($i = 0; $i < $total; $i++) {
-			$this->currChar = $this->currentSegment{$i};
+			$this->currChar = $this->currentSegment[$i];
 
 			switch ($this->currChar) {
 				case '@':
